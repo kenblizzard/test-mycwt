@@ -19,8 +19,8 @@ export const setDogsListSummary = createAction('SET_DOGS_LIST_SUMMARY',
 )
 
 export const incrementDogLikes = createAction('INCREMENT_DOG_LIKES', 
-    (dogName)=> ({
-        payload: dogName
+    (dogBreedName)=> ({
+        payload: dogBreedName
     })
 )
 

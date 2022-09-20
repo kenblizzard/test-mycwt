@@ -9,7 +9,9 @@ const DogsImageGallery = () => {
             display: 'grid',
             gridTemplateColumns: 'repeat(5, 1fr)',
             gridAutoRows: '300px',
-            gap: '10px'
+            gap: '10px',
+            height: '100vh',
+            overflowY: 'auto'
         }}>
             {
                 randomDogsList && randomDogsList.map((dog, i) => (

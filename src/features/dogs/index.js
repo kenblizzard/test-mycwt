@@ -7,7 +7,7 @@ import DogsImageGallery from './components/DogsImageGallery';
 import DogsSummary from './components/DogsSummary';
 
 const Dogs = () => {
-    const [isLoading, toggleIsLoading] = useState(true)
+    const [isLoading, toggleIsLoading] = useState(false)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -32,8 +32,12 @@ const Dogs = () => {
     }
 
     const getDogImage = async (dogBreedName) => {
-        const response = await axios.get(`https://dog.ceo/api/breed/${dogBreedName}/images/random`)
-        return response.data.message
+        try {
+            const response = await axios.get(`https://dog.ceo/api/breed/${dogBreedName}/images/random`)
+            return response.data.message
+        } catch {
+            return null
+        }
     }
 
     const generateRandomDogsList = async (dogsList) => {
@@ -71,7 +75,8 @@ const Dogs = () => {
                 <div css={{
                     display: 'grid',
                     gridTemplateColumns: '15% 85%',
-                    padding: '2rem 1rem',
+                    gap: '1rem',
+                    padding: '1rem',
                 }}>
                     <DogsSummary />
                     <DogsImageGallery />

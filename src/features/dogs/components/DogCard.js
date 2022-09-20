@@ -21,6 +21,7 @@ const DogCard = ({ image, name, likes }) => {
             onClick={() => handleDogClick(name)}
         >
             <img
+                alt={name}
                 src={image}
                 css={{
                     width: '100%',
