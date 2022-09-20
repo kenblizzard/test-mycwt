@@ -29,7 +29,7 @@ const DogCard = ({ image, name, likes }) => {
                 }}
             />
             <div css={{ padding: '0.5rem 1rem' }}>
-                <span css={{ marginBottom: '1rem', fontWeight: 'bold' }}>{name}</span>
+                <strong>{name}</strong>
                 <div>likes: {likes} </div>
             </div>
 
